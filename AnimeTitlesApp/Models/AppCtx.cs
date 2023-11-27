@@ -11,5 +11,7 @@ namespace AnimeTitlesApp.Models
         {
             Database.EnsureCreated();
         }
+
+        public DbSet<Genre> Genres { get; set; }
     }
 }
