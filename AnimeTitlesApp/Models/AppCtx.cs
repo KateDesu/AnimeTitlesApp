@@ -14,5 +14,6 @@ namespace AnimeTitlesApp.Models
 
         public DbSet<Genre> Genres { get; set; }
         public DbSet<AnimeType> AnimeTypes { get; set; }
+        public DbSet<AnimeTitle> AnimeTitles { get; set; }
     }
 }
