@@ -1,7 +1,6 @@
 ﻿using AnimeTitlesApp.Models;
 using AnimeTitlesApp.Models.Data;
 using AnimeTitlesApp.ViewModels.Genres;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -104,6 +103,13 @@ namespace AnimeTitlesApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(short id, EditGenreViewModel model)
         {
+            if (_context.Genres
+                .Where(f => f.GenreName == model.GenreName)
+                .FirstOrDefault() != null)
+            {
+                ModelState.AddModelError("", "Введеный жанр уже существует");
+            }
+
             Genre genre = await _context.Genres.FindAsync(id);
 
             if (id != genre.Id)

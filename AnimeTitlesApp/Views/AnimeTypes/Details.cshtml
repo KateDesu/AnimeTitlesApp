@@ -1,13 +1,13 @@
-﻿@model AnimeTitlesApp.Models.Data.Genre
+﻿@model AnimeTitlesApp.Models.Data.AnimeType
 
 @{
-    ViewData["Title"] = "Жанры";
+    ViewData["Title"] = "Типы аниме";
 }
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Главная</a></li>
-        <li class="breadcrumb-item"><a asp-controller="Genres" asp-action="Index">Жанры</a></li>
+        <li class="breadcrumb-item"><a asp-controller="AnimeTypes" asp-action="Index">Типы аниме</a></li>
         <li class="breadcrumb-item active">Просмотр информации</li>
     </ol>
 </nav>
@@ -16,16 +16,16 @@
     <a class="btn text-dark" asp-action="Index" title="Вернуться к списку">
         <i class="fas fa-arrow-left"></i>
     </a>
-    Просмотр жанра
+    Просмотр типа аниме
 </h3>
 
 <div>
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GenreName)
+            @Html.DisplayNameFor(model => model.AnimeOfType)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GenreName)
+            @Html.DisplayFor(model => model.AnimeOfType)
         </dd>
     </dl>
 </div>
